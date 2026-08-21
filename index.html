@@ -293,7 +293,385 @@
     }
 
     /* =========================
-       STATS / BAGIAN ATAS HALAMAN 2
+   SECTION 2
+========================= */
+
+.section-2 {
+    width: 100%;
+    padding: 80px 5%;
+    background: #ffffff;
+}
+
+.section-2-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 70px;
+    align-items: start;
+}
+
+/* Judul */
+.section-2-title {
+    background: #21688f;
+    color: white;
+    text-align: center;
+    font-size: 28px;
+    letter-spacing: 2px;
+    font-weight: 400;
+
+    padding: 9px 20px;
+    border-radius: 40px;
+
+    margin-bottom: 20px;
+}
+
+/* Card */
+.section-2-card {
+    background: #5790ae;
+    border-radius: 45px;
+    padding: 8px;
+
+    box-shadow: 10px 12px 15px rgba(0, 0, 0, 0.25);
+
+    overflow: hidden;
+}
+
+/* Image */
+.section-2-card img {
+    width: 100%;
+    height: 315px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 38px;
+}
+
+/* Announcement */
+.announcement-card img {
+    height: px;
+    object-fit: contain;
+}
+
+/* Article */
+.article-card {
+    padding-bottom: 25px;
+}
+
+.article-card img {
+    height: 215px;
+    object-fit: cover;
+}
+
+.article-content {
+    color: white;
+    padding: 22px 12px 0;
+}
+
+.article-content h3 {
+    margin: 0 0 10px;
+
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.article-content p {
+    margin: 0;
+
+    font-size: 16px;
+    line-height: 1.55;
+    letter-spacing: 0.3px;
+}
+.article-content p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.55;
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================
+   ANNOUNCEMENT LIGHTBOX
+========================= */
+
+.announcement-image {
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.announcement-image:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+
+.announcement-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(6px);
+}
+
+.announcement-lightbox.show {
+    display: flex;
+}
+
+.announcement-lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 20px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+
+    animation: announcementZoom 0.3s ease;
+}
+
+.announcement-close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: white;
+    color: #17658e;
+
+    font-size: 30px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.25);
+
+    transition: .25s ease;
+}
+
+.announcement-close:hover {
+    transform: rotate(90deg) scale(1.08);
+}
+
+@keyframes announcementZoom {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 600px) {
+    .announcement-lightbox {
+        padding: 15px;
+    }
+
+    .announcement-lightbox img {
+        max-width: 95vw;
+        max-height: 85vh;
+        border-radius: 14px;
+    }
+
+    .announcement-close {
+        top: 15px;
+        right: 15px;
+        width: 42px;
+        height: 42px;
+        font-size: 24px;
+    }
+}
+/* =========================
+   GALERY SLIDE HORIZONTAL
+========================= */
+
+.gallery-slider {
+    width: 100%;
+    height: 315px;
+    overflow: hidden;
+    border-radius: 38px;
+}
+
+.gallery-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    transition: transform 0.8s ease-in-out;
+}
+
+.gallery-track img {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    display: block;
+}
+
+
+/* Titik tetap seperti UI sebelumnya */
+
+.gallery-dots {
+    text-align: center;
+    margin-top: 7px;
+}
+
+.gallery-dots span {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+
+    background: white;
+    border-radius: 50%;
+
+    margin: 0 4px;
+
+    transition: 0.3s ease;
+}
+
+.gallery-dots span.active {
+    transform: scale(1.2);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    .gallery-slider {
+        height: 260px;
+        border-radius: 27px;
+    }
+
+}
+/* Gallery dots */
+.gallery-dots {
+    text-align: center;
+    margin-top: 7px;
+}
+
+.gallery-dots span {
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    background: white;
+    border-radius: 50%;
+
+    margin: 0 4px;
+}
+
+.gallery-dots span.active {
+    transform: scale(1.15);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .section-2-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        max-width: 550px;
+    }
+
+    .section-2 {
+        padding: 60px 6%;
+    }
+
+    .section-2-title {
+        font-size: 24px;
+    }
+
+    .section-2-card img {
+        height: 330px;
+    }
+
+    .announcement-card img {
+        height: auto;
+        max-height: 650px;
+    }
+
+    .article-card img {
+        height: 300px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .section-2 {
+        padding: 45px 5%;
+    }
+
+    .section-2-container {
+        gap: 35px;
+    }
+
+    .section-2-title {
+        font-size: 20px;
+        padding: 10px 15px;
+    }
+
+    .section-2-card {
+        border-radius: 32px;
+    }
+
+    .section-2-card img {
+        border-radius: 27px;
+        height: 260px;
+    }
+
+    .announcement-card img {
+        height: auto;
+    }
+
+    .article-card img {
+        height: 230px;
+    }
+
+    .article-content {
+        padding: 18px 10px 0;
+    }
+
+    .article-content h3 {
+        font-size: 18px;
+    }
+
+    .article-content p {
+        font-size: 14px;
+    }
+}
+
+    /* =========================
+       STATS / BAGIAN ATAS HALAMAN 3
     ========================== */
     .stats-section {
       position: relative;
@@ -341,7 +719,7 @@
     }
 
     /* =========================
-       ABOUT / BAGIAN BAWAH HALAMAN 2
+       ABOUT / BAGIAN BAWAH HALAMAN 3
     ========================== */
     .about {
       position: relative;
@@ -731,7 +1109,111 @@
       </div>
     </section>
 
-    <!-- HALAMAN / SECTION 2 -->
+    <!-- =========================
+     SECTION 2
+========================= -->
+
+<section id="section2" class="section-2">
+
+  <div class="section-2-container">
+
+      <!-- GALERY -->
+      <div class="section-2-item">
+
+          <div class="section-2-title">
+              GALERY
+          </div>
+
+          <div class="section-2-card gallery-card">
+
+            <div class="gallery-slider">
+        
+                <div class="gallery-track">
+        
+                    <img src="assets/galery1.jpg" alt="Galeri 1">
+        
+                    <img src="assets/galery2.jpg" alt="Galeri 2">
+        
+                    <img src="assets/galery3.jpg" alt="Galeri 3">
+        
+                    <img src="assets/galery4.jpg" alt="Galeri 4">
+
+                    <img src="assets/galery5.jpg" alt="Galeri 5">
+        
+                </div>
+        
+            </div>
+        
+            <div class="gallery-dots">
+                <span class="active"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        
+        </div>
+
+          </div>
+
+      <!-- ANNOUNCEMENT -->
+      <div class="section-2-item">
+
+          <div class="section-2-title">
+              ANNOUNCEMENT
+          </div>
+
+          <div class="section-2-card announcement-card">
+
+            <img
+            src="assets/announcement.jpg"
+            alt="Announcement SD Negeri Randu 01"
+            class="announcement-image"
+            onclick="openAnnouncement()"
+        >
+
+          </div>
+
+      </div>
+
+
+      <!-- ARTIKEL -->
+      <div class="section-2-item">
+
+          <div class="section-2-title">
+              ARTIKEL
+          </div>
+
+          <div class="section-2-card article-card">
+
+              <img
+                  src="assets/artikel.jpg"
+                  alt="Artikel SD Negeri Randu 01"
+              >
+
+              <div class="article-content">
+
+                  <h3>
+                      Kontingen SDN Randu 01 Mengikuti JAMRAN
+                  </h3>
+
+                  <p>
+                      Kontingen SDN Randu 01, mengikuti JAMRAN
+                      yang diselenggarakan di Lapangan Desa
+                      Pecalungan pada tanggal 14 - 16
+                      Agustus 2026. . . . dst
+                  </p>
+
+              </div>
+
+          </div>
+
+      </div>
+
+  </div>
+
+</section>
+
+    <!-- HALAMAN / SECTION 3 -->
     <section class="stats-section" id="stats">
       <div class="stats">
 
@@ -896,6 +1378,109 @@
 
     document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
   </script>
+<script>
 
+  let galleryIndex = 0;
+  
+  const galleryTrack = document.querySelector(".gallery-track");
+  const galleryDots = document.querySelectorAll(".gallery-dots span");
+  
+  const galleryTotal = galleryTrack.children.length;
+  
+  
+  function moveGallery() {
+  
+      galleryIndex++;
+  
+      if (galleryIndex >= galleryTotal) {
+          galleryIndex = 0;
+      }
+  
+      galleryTrack.style.transform =
+          `translateX(-${galleryIndex * 100}%)`;
+  
+  
+      galleryDots.forEach((dot, index) => {
+  
+          dot.classList.toggle(
+              "active",
+              index === galleryIndex
+          );
+  
+      });
+  
+  }
+  
+  
+  /* Berganti setiap 4 detik */
+  
+  setInterval(moveGallery, 4000);
+  
+  
+  /* Bisa klik titik */
+  
+  galleryDots.forEach((dot, index) => {
+  
+      dot.addEventListener("click", () => {
+  
+          galleryIndex = index;
+  
+          galleryTrack.style.transform =
+              `translateX(-${galleryIndex * 100}%)`;
+  
+  
+          galleryDots.forEach((dot, dotIndex) => {
+  
+              dot.classList.toggle(
+                  "active",
+                  dotIndex === galleryIndex
+              );
+  
+          });
+  
+      });
+  
+  });function openAnnouncement() {
+    const lightbox = document.getElementById("announcementLightbox");
+
+    lightbox.classList.add("show");
+
+    document.body.style.overflow = "hidden";
+}
+
+
+function closeAnnouncement() {
+    const lightbox = document.getElementById("announcementLightbox");
+
+    lightbox.classList.remove("show");
+
+    document.body.style.overflow = "";
+}
+
+
+/* Klik area gelap untuk menutup */
+
+document
+    .getElementById("announcementLightbox")
+    .addEventListener("click", function(event) {
+
+        if (event.target === this) {
+            closeAnnouncement();
+        }
+
+    });
+
+
+/* Tombol ESC untuk menutup */
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+        closeAnnouncement();
+    }
+
+});
+  
+  </script>
 </body>
 </html>
