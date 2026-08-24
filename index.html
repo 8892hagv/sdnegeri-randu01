@@ -1024,7 +1024,124 @@
     padding: 20px 0;
     font-size: 14px;
     color: #777;
-}
+}/* =========================================================
+       SECTION VISI & MISI (DESAIN BARU SESUAI GAMBAR 4 & 5)
+    ========================================================= */
+    .visi-misi-section {
+      padding: 90px 5%;
+      background: #ffffff;
+      max-width: 1250px;
+      margin: 0 auto;
+    }
+
+    /* Header Visi dengan Garis Samping */
+    .visi-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+
+    .visi-header::before,
+    .visi-header::after {
+      content: "";
+      flex: 1;
+      height: 2px;
+      background-color: #000000;
+    }
+
+    .visi-header h2 {
+      color: #c0a030;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* Kartu Visi */
+    .visi-card-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 60px;
+    }
+
+    .visi-card {
+      background: #ffffff;
+      border: 2px solid #000000;
+      border-radius: 40px;
+      padding: 35px 45px;
+      max-width: 650px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .visi-card p {
+      font-size: 24px;
+      line-height: 1.45;
+      color: #000000;
+      font-weight: 500;
+    }
+
+    /* Header Misi */
+    .misi-title-header {
+      color: #c0a030;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    /* Grid Kartu Misi */
+    .misi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .misi-card {
+      background: #ffffff;
+      border: 2px solid #000000;
+      border-radius: 35px;
+      padding: 30px 25px;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.22);
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      min-height: 230px;
+    }
+
+    .misi-num {
+      font-size: 34px;
+      font-weight: 800;
+      line-height: 1;
+      color: #000000;
+      flex-shrink: 0;
+    }
+
+    .misi-card p {
+      font-size: 18px;
+      line-height: 1.45;
+      color: #000000;
+      margin: 0;
+      font-weight: 400;
+      text-align: left;
+    }
+
+    /* Responsif Visi Misi */
+    @media (max-width: 1024px) {
+      .misi-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .misi-grid { grid-template-columns: 1fr; }
+      .visi-card p { font-size: 19px; }
+      .misi-card p { font-size: 16px; }
+      .visi-card { padding: 25px 20px; }
+    }
   </style>
 </head>
 
@@ -1081,8 +1198,8 @@
         <p class="tagline">CERDAS, BERKARAKTER</p>
 
         <div class="hero-buttons">
-          <a href="#visi" class="pill-button">VISI</a>
-          <a href="#misi" class="pill-button">MISI</a>
+          <a href="#visi" class="pill-button">VISI & MISI</a>
+          <a href="#about" class="pill-button">ABOUT</a>
         </div>
       </div>
 
@@ -1245,62 +1362,69 @@
         </div>
 
         <div class="about-text reveal">
-          SD NEGERI RANDU 01 adalah sebuah sekolah yang terletak di kecamatan
-          pecalungan Kabupaten Batang, tepatnya di Desa Randu. Merupakan sebuah
-          sekolah yang berakreditasi <strong>A</strong>. Sebagai salah satu jenjang
-          utama dalam pendidikan dasar, <strong>SDN RANDU 01</strong> menjunjung tinggi
-          <strong>moral, integritas, adab, dan budaya.</strong> Dengan slogan
-          <strong>cerdas - berkarakter</strong> memberikan suatu harapan bahwa
-          <strong>siswa-siswi di SDN Randu 01</strong> dapat bersaing secara akademis
-          dan memiliki karakter yang baik dan berakhlak mulia.
+          SD Negeri Randu 01 merupakan sekolah standar nasional pendidikan yang terakreditasi A pada tahun 2024, berdiri sejak 1828. 
+          Sekolah Dasar Negeri Randu 01 terletak di Desa Randu Kecamatan Pecalungan Kabupaten Batang. 
+          Tepatnya dijalan Subah  Pecalungan KM 03. SD Negeri Randu 01 merupakan Sekolah gabungan dengan SD Negeri Randu 02 di tahun 2012.
+          Keadaan sarana dan prasarana yang dimiliki SD Negeri Randu 01 sudah cukup memadai. Menempati lahan seluas ± 4320 m2. 
+          Dari penggabungan 2  SD tersebut, menjadikan SD Negeri Randu 01 memiliki ruang kelas yang berlebih sehingga bisa dimanfaatkan sebagai 
+          ruang kegiatan lain seperti ruang laboratorium, komputer, ruang pertemuan dan ruang ketrampilan.
         </div>
 
       </div>
     </section>
 
-    <section id="visi" style="padding:90px 7%; text-align:center;">
-      <h2>Visi</h2>
-      <p style="margin-top:15px;">Terwujudnya peserta didik yang berakhlak mulia, cerdas, kreatif, mandiri sesuai profil pelajar pancasila.</p>
-    </section>
+  <!-- SECTION VISI & MISI BARU -->
+  <section id="visi" class="visi-misi-section">
+      
+    <!-- VISI SEKOLAH -->
+    <div class="visi-header reveal">
+      <h2>VISI SEKOLAH</h2>
+    </div>
 
-    <section id="misi" class="misi-section" style="padding:90px 7%; text-align:center;">
-      <div class="misi-container">
-    
-        <h2>Misi</h2>
-    
-        <ol class="misi-list">
-          <li>
-            Menyelenggarakan pendidikan yang aktif, kreatif, berbudaya,
-            dan berorientasi pada pembentukan karakter.
-          </li>
-    
-          <li>
-            Menumbuhkembangkan nilai-nilai ajaran agama peserta didik
-            dalam pembentukan karakter dan akhlak mulia.
-          </li>
-    
-          <li>
-            Menggali potensi kecerdasan intelektual dan mengembangkan
-            bakat minat peserta didik.
-          </li>
-    
-          <li>
-            Mengembangkan keterampilan kemampuan dasar (literasi dan numerasi)
-            peserta didik melalui kegiatan membaca, menulis, berhitung serta
-            berkomunikasi sederhana dengan menggunakan kemampuan Bahasa Indonesia.
-          </li>
-    
-          <li>
-            Membangun kemandirian peserta didik melalui kegiatan pembelajaran
-            yang berpihak pada peserta didik.
-          </li>
-    
-          <li>
-            Mewujudkan peserta didik sebagai pelajar sepanjang hayat dan memiliki
-            potensi global sesuai dengan profil pelajar Pancasila.
-          </li>
-        </ol>
-    
+    <div class="visi-card-wrapper reveal">
+      <div class="visi-card">
+        <p>Terwujudnya peserta didik yang berakhlak mulia, cerdas, kreatif, mandiri sesuai profil pelajar pancasila.</p>
+      </div>
+    </div>
+
+    <!-- MISI SEKOLAH -->
+    <div id="misi" class="misi-title-header reveal">
+      MISI SEKOLAH
+    </div>
+
+    <div class="misi-grid">
+      <!-- Card 01 -->
+      <div class="misi-card reveal">
+        <span class="misi-num">01</span>
+        <p>Menumbuhkembangkan nilai-nilai ajaran agama peserta didik dalam pembentukan karakter dan akhlak mulia</p>
+      </div>
+
+      <!-- Card 02 -->
+      <div class="misi-card reveal">
+        <span class="misi-num">02</span>
+        <p>Menggali potensi kecerdasan intelektual dan mengembangkan bakat minat peserta didik</p>
+      </div>
+
+      <!-- Card 03 -->
+      <div class="misi-card reveal">
+        <span class="misi-num">03</span>
+        <p>Mengembangkan keterampilan kemampuan dasar (literasi dan numerasi) peserta didik melalui kegiatan membaca, menulis, berhitung serta berkomunikasi sederhana dengan menggunakan kemampuan Bahasa Indonesia.</p>
+      </div>
+
+      <!-- Card 04 -->
+      <div class="misi-card reveal">
+        <span class="misi-num">04</span>
+        <p>Membangun kemandirian peserta didik melalui kegiatan pembelajaran yang berpihak pada peserta didik;</p>
+      </div>
+
+      <!-- Card 05 -->
+      <div class="misi-card reveal">
+        <span class="misi-num">05</span>
+        <p>Mewujudkan peserta didik sebagai pelajar sepanjang hayat dan memiliki potensi global sesuai dengan profil pelajar Pancasila</p>
+      </div>
+    </div>
+
+  </section>
       </div>
     </section>
 
@@ -1461,30 +1585,6 @@ function closeAnnouncement() {
 
     document.body.style.overflow = "";
 }
-
-
-/* Klik area gelap untuk menutup */
-
-document
-    .getElementById("announcementLightbox")
-    .addEventListener("click", function(event) {
-
-        if (event.target === this) {
-            closeAnnouncement();
-        }
-
-    });
-
-
-/* Tombol ESC untuk menutup */
-
-document.addEventListener("keydown", function(event) {
-
-    if (event.key === "Escape") {
-        closeAnnouncement();
-    }
-
-});
   
   </script>
 </body>
