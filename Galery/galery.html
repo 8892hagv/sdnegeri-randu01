@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galery - SD Negeri Randu 01</title>
+  <meta name="description" content="Galeri dokumentasi kegiatan SD Negeri Randu 01.">
+  <link rel="icon" type="image/png" href="../Galery/Asset/LOGO SD RANDU01.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="galery.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="../index.html#home" class="brand">
+      <img src="../Galery/Asset/LOGO SD RANDU01.png" alt="Logo SD Negeri Randu 01">
+      <span>SDN RANDU 01</span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Buka menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a class="nav-item" href="../index.html#home">Home</a>
+
+      <div class="nav-item has-dropdown">
+        <span class="nav-label" tabindex="0">Profil</span>
+        <div class="dropdown">
+          <a href="../index.html#about">Tentang Sekolah</a>
+          <a href="../index.html#stats">Data Sekolah</a>
+          <a href="../index.html#visi">Visi &amp; Misi</a>
+        </div>
+      </div>
+
+      <div class="nav-item has-dropdown">
+        <span class="nav-label" tabindex="0">Directory</span>
+        <div class="dropdown">
+          <a href="../guru-tendik/guru-tendik.html">Guru &amp; Tendik</a>
+          <a href="../peserta didik/peserta-didik.html">Peserta Didik</a>
+        </div>
+      </div>
+
+      <div class="nav-item has-dropdown active">
+        <span class="nav-label" tabindex="0">Galery</span>
+        <div class="dropdown">
+          <a href="galery.html" class="current">Dokumentasi</a>
+          <a href="galery.html">Kegiatan Sekolah</a>
+        </div>
+      </div>
+
+      <a class="nav-item" href="../index.html#contact">Contact Us</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="search" id="searchBox">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" id="searchInput" placeholder="Cari informasi..." autocomplete="off"
+               aria-label="Cari informasi di website" aria-controls="searchResults">
+        <ul class="search-results" id="searchResults" role="listbox" hidden></ul>
+      </div>
+
+      <div class="notif" id="notifBox">
+        <button class="bell" id="bellBtn" aria-label="Notifikasi" aria-expanded="false">
+          <i class="fa-regular fa-bell"></i>
+          <span class="bell-dot" id="bellDot"></span>
+        </button>
+        <div class="notif-panel" id="notifPanel" hidden>
+          <p class="notif-title">Pemberitahuan</p>
+          <a href="../index.html#announcement" class="notif-item">
+            <i class="fa-solid fa-bullhorn"></i>
+            <span><strong>Pengumuman terbaru</strong>Lihat pengumuman dari sekolah</span>
+          </a>
+          <a href="../index.html#artikel" class="notif-item">
+            <i class="fa-solid fa-newspaper"></i>
+            <span><strong>Artikel: JAMRAN</strong>Kontingen SDN Randu 01 mengikuti JAMRAN</span>
+          </a>
+          <a href="galery.html" class="notif-item">
+            <i class="fa-solid fa-images"></i>
+            <span><strong>Dokumentasi kegiatan</strong>Foto kegiatan sekolah di halaman Galery</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- GALERY -->
+  <main class="gallery-section" id="gallery">
+
+    <div class="gallery-title">
+      <span class="gallery-line"></span>
+      <div class="gallery-title-box">
+        <h1>GALERY</h1>
+      </div>
+      <span class="gallery-line"></span>
+    </div>
+
+    <div class="gallery-grid">
+      <figure class="gallery-item">
+        <img src="../Galery/Asset/galeri1.jpg" alt="Siswi melompat riang saat bermain di halaman sekolah" loading="lazy">
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="../Galery/Asset/galeri2.jpeg" alt="Siswa-siswi pramuka berkegiatan di halaman sekolah" loading="lazy">
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="../Galery/Asset/galeri3.jpeg" alt="Upacara bendera di halaman SD Negeri Randu 01" loading="lazy">
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="../Galery/Asset/galeri4.jpeg" alt="Siswa pemenang lomba Bahasa Ibu tingkat kecamatan" loading="lazy">
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="../Galery/Asset/galeri5.jpeg" alt="Purnawiyata dan Gelar Karya Siswa tahun pelajaran 2025/2026" loading="lazy">
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="../Galery/Asset/galeri6.jpeg" alt="Siswa membaca bersama di halaman sekolah" loading="lazy">
+      </figure>
+    </div>
+
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Tutup foto">&times;</button>
+    <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Foto sebelumnya">&#10094;</button>
+    <img id="lightboxImg" src="" alt="">
+    <button class="lightbox-nav next" id="lightboxNext" aria-label="Foto berikutnya">&#10095;</button>
+  </div>
+ 
+  <footer class="site-footer">
+    <p>Copyright © 2026 SDN Randu 01</p>
+  </footer>
+
+  <script src="galery.js"></script>
+</body>
+</html>

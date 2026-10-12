@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <link rel="icon" type="image/png" href="../assets/LOGO SD RANDU01.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guru & Tendik - SD Negeri Randu 01</title>
+  <meta name="description" content="Daftar Guru & Tendik SD Negeri Randu 01.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="guru-tendik.css">
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <a href="../index.html#home" class="brand">
+      <img src="../assets/LOGO SD RANDU01.png" alt="Logo SD Negeri Randu 01">
+      <span>SDN RANDU 01</span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Buka menu" aria-expanded="false">
+      &#9776;
+    </button>
+
+    <nav class="nav" id="navLinks" aria-label="Menu utama">
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../index.html#home">Home</a></li>
+
+        <li class="has-dropdown">
+          <button class="nav-link dropdown-btn" aria-expanded="false">
+            Profil <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <ul class="dropdown">
+            <li><a href="../index.html#about">Tentang Sekolah</a></li>
+            <li><a href="../index.html#stats">Data Sekolah</a></li>
+            <li><a href="../index.html#visi">Visi &amp; Misi</a></li>
+          </ul>
+        </li>
+
+        <li class="has-dropdown">
+          <button class="nav-link dropdown-btn active" aria-expanded="false">
+            Directory <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <ul class="dropdown">
+            <li><a href="guru-tendik.html" class="current">Guru &amp; Tendik</a></li>
+            <li><a href="../peserta%20didik/peserta-didik.html">Peserta Didik</a></li>
+          </ul>
+        </li>
+
+        <li class="has-dropdown">
+          <button class="nav-link dropdown-btn" aria-expanded="false">
+            Galery <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <ul class="dropdown">
+            <li><a href="../Galery/galery.html">Dokumentasi</a></li>
+            <li><a href="../index.html#kegiatan">Kegiatan Sekolah</a></li>
+          </ul>
+        </li>
+
+        <li><a class="nav-link" href="../index.html#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="search" id="searchBox">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" id="searchInput" placeholder="Cari informasi..." autocomplete="off"
+               aria-label="Cari informasi di website" aria-controls="searchResults">
+        <ul class="search-results" id="searchResults" role="listbox" hidden></ul>
+      </div>
+
+      <div class="notif" id="notifBox">
+        <button class="bell" id="bellBtn" aria-label="Notifikasi" aria-expanded="false">
+          <i class="fa-regular fa-bell"></i>
+          <span class="bell-dot" id="bellDot"></span>
+        </button>
+        <div class="notif-panel" id="notifPanel" hidden>
+          <p class="notif-title">Pemberitahuan</p>
+          <a href="../index.html#announcement" class="notif-item">
+            <i class="fa-solid fa-bullhorn"></i>
+            <span><strong>Pengumuman terbaru</strong>Lihat pengumuman dari sekolah</span>
+          </a>
+          <a href="../index.html#artikel" class="notif-item">
+            <i class="fa-solid fa-newspaper"></i>
+            <span><strong>Artikel: JAMRAN</strong>Kontingen SDN Randu 01 mengikuti JAMRAN</span>
+          </a>
+          <a href="../Galery/galery.html" class="notif-item">
+            <i class="fa-solid fa-images"></i>
+            <span><strong>Dokumentasi kegiatan</strong>Foto kegiatan sekolah di halaman Galery</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+
+    <div class="page-title">
+      <h1>Guru &amp; Tendik</h1>
+    </div>
+
+    <!-- GAMBAR 1 : Kepala Sekolah + Guru Kelas I - III -->
+    <section class="row head" id="rowHead"></section>
+    <section class="row three" id="rowKelas"></section>
+
+    <!-- GAMBAR 2 : Guru Kelas IV - VI, PAI, PJOK, Penjaga -->
+    <section class="row three" id="rowLainnya"></section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Copyright © 2026 SDN Randu 01</p>
+  </footer>
+
+  <script src="guru-tendik.js"></script>
+</body>
+</html>

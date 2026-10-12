@@ -1,1593 +1,362 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <!-- Favicon / Logo Tab Browser -->
-<link rel="icon" type="image/png" href="assets/LOGO SD RANDU01.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SD Negeri Randu 01</title>
   <meta name="description" content="Website resmi SD Negeri Randu 01 - Cerdas, Berkarakter.">
+  <link rel="icon" type="image/png" href="assets/LOGO SD RANDU01.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --blue: #17658e;
-      --blue-dark: #07517a;
-      --blue-light: #23719a;
-      --white: #fff;
-      --text: #18364a;
-      --shadow: 0 12px 30px rgba(0, 0, 0, .14);
-      --radius: 34px;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Poppins", sans-serif;
-      color: var(--text);
-      background: #fff;
-      overflow-x: hidden;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    /* =========================
-       NAVBAR
-    ========================== */
-    .navbar {
-      position: fixed;
-      z-index: 1000;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 76px;
-      display: flex;
-      align-items: center;
-      padding: 0 4.5%;
-      background: rgba(5, 76, 116, .96);
-      color: white;
-      border-radius: 0 0 42px 42px;
-      box-shadow: 0 10px 24px rgba(0,0,0,.15);
-      backdrop-filter: blur(10px);
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 700;
-      letter-spacing: .5px;
-      font-size: 20px;
-      white-space: nowrap;
-    }
-
-    .brand img {
-      width: 48px;
-      height: 48px;
-      object-fit: contain;
-      display: block;
-    }
-
-    .nav-links {
-      margin-left: auto;
-      display: flex;
-      align-items: center;
-      gap: 42px;
-      font-size: 18px;
-    }
-
-    .nav-item {
-      position: relative;
-      cursor: pointer;
-      padding: 26px 0;
-    }
-
-    .nav-item.has-dropdown::after {
-      content: "";
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      margin-left: 8px;
-      border-right: 2px solid white;
-      border-bottom: 2px solid white;
-      transform: rotate(45deg) translateY(-3px);
-    }
-
-    .dropdown {
-      position: absolute;
-      top: 66px;
-      left: -15px;
-      min-width: 180px;
-      padding: 10px;
-      border-radius: 16px;
-      background: white;
-      color: var(--text);
-      box-shadow: var(--shadow);
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(8px);
-      transition: .25s ease;
-    }
-
-    .nav-item:hover .dropdown {
-      opacity: 1;
-      pointer-events: auto;
-      transform: translateY(0);
-    }
-
-    .dropdown a {
-      display: block;
-      padding: 10px 12px;
-      border-radius: 10px;
-      font-size: 14px;
-    }
-
-    .dropdown a:hover {
-      background: #eef6fa;
-    }
-
-    .menu-toggle {
-      display: none;
-      margin-left: auto;
-      border: 0;
-      background: transparent;
-      color: white;
-      font-size: 30px;
-      cursor: pointer;
-    }
-
-    /* =========================
-       HERO / HALAMAN 1
-    ========================== */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      padding: 145px 6% 170px;
-      display: flex;
-      align-items: center;
-      background: var(--blue);
-      color: white;
-      overflow: hidden;
-      isolation: isolate;
-    }
-
-    /* curved white bottom */
-    .hero::after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      left: -5%;
-      bottom: -125px;
-      width: 110%;
-      height: 250px;
-      background: white;
-      border-radius: 50% 50% 0 0 / 60% 60% 0 0;
-      box-shadow: 0 -12px 22px rgba(0,0,0,.16);
-    }
-
-    .hero-content {
-      width: 52%;
-      animation: fadeUp .9s ease both;
-    }
-
-    .hero h1 {
-      max-width: 700px;
-      font-size: clamp(52px, 5.1vw, 82px);
-      line-height: 1.02;
-      font-weight: 800;
-      letter-spacing: -2px;
-    }
-
-    .tagline {
-      margin-top: 14px;
-      font-weight: 600;
-      font-size: clamp(15px, 1.4vw, 22px);
-      letter-spacing: .62em;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 44px;
-      margin-top: 88px;
-    }
-
-    .pill-button {
-      min-width: 145px;
-      padding: 20px 30px;
-      border-radius: 50px;
-      background: white;
-      color: #385dc5;
-      text-align: center;
-      font-weight: 700;
-      font-size: 20px;
-      box-shadow: 0 8px 18px rgba(0,0,0,.08);
-      transition: .25s ease;
-    }
-
-    .pill-button:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 24px rgba(0,0,0,.16);
-    }
-
-    /* =========================
-       PHOTO SLIDER
-    ========================== */
-    .photo-showcase {
-      width: 48%;
-      min-height: 450px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      animation: fadeIn .9s .15s ease both;
-    }
-
-    .main-photo {
-      width: 275px;
-      height: 390px;
-      border-radius: 72px;
-      overflow: hidden;
-      box-shadow: 0 16px 30px rgba(0,0,0,.12);
-    }
-
-    .side-photos {
-      width: 185px;
-      height: 390px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      animation: fadeIn .9s .15s ease both;
-    }
-
-    .side-photo {
-      width: 185px;
-      height: 185px;
-      overflow: hidden;
-      border-radius: 60px;
-      animation: fadeIn .9s .15s ease both;
-    }
-
-    .photo {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* slide-to-right animation */
-    .photo-frame {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      height: 100%;
-    }
-
-    .photo-track {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      width: 300%;
-      transform: translateX(-33.333%);
-      transition: transform .75s cubic-bezier(.77,0,.18,1);
-    }
-
-    .photo-track img {
-      width: 33.333333%;
-      height: 100%;
-      object-fit: cover;
-      flex: 0 0 33.333333%;
-    }
-
-    .photo-frame.slide-right .photo-track {
-      animation: slideRight .85s cubic-bezier(.77,0,.18,1);
-    }
-
-    @keyframes slideRight {
-      0%   { transform: translateX(-66.666%); }
-      100% { transform: translateX(-33.333%); }
-    }
-
-    /* =========================
-   SECTION 2
-========================= */
-
-.section-2 {
-    width: 100%;
-    padding: 80px 5%;
-    background: #ffffff;
-}
-
-.section-2-container {
-    max-width: 1250px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 70px;
-    align-items: start;
-}
-
-/* Judul */
-.section-2-title {
-    background: #21688f;
-    color: white;
-    text-align: center;
-    font-size: 28px;
-    letter-spacing: 2px;
-    font-weight: 400;
-
-    padding: 9px 20px;
-    border-radius: 40px;
-
-    margin-bottom: 20px;
-}
-
-/* Card */
-.section-2-card {
-    background: #5790ae;
-    border-radius: 45px;
-    padding: 8px;
-
-    box-shadow: 10px 12px 15px rgba(0, 0, 0, 0.25);
-
-    overflow: hidden;
-}
-
-/* Image */
-.section-2-card img {
-    width: 100%;
-    height: 315px;
-
-    object-fit: cover;
-
-    display: block;
-
-    border-radius: 38px;
-}
-
-/* Announcement */
-.announcement-card img {
-    height: px;
-    object-fit: contain;
-}
-
-/* Article */
-.article-card {
-    padding-bottom: 25px;
-}
-
-.article-card img {
-    height: 215px;
-    object-fit: cover;
-}
-
-.article-content {
-    color: white;
-    padding: 22px 12px 0;
-}
-
-.article-content h3 {
-    margin: 0 0 10px;
-
-    font-size: 20px;
-    line-height: 1.4;
-    font-weight: 500;
-}
-
-.article-content p {
-    margin: 0;
-
-    font-size: 16px;
-    line-height: 1.55;
-    letter-spacing: 0.3px;
-}
-.article-content p {
-    margin: 0;
-    font-size: 16px;
-    line-height: 1.55;
-    letter-spacing: 0.3px;
-}
-
-
-/* =========================
-   ANNOUNCEMENT LIGHTBOX
-========================= */
-
-.announcement-image {
-    cursor: pointer;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.announcement-image:hover {
-    transform: scale(1.02);
-    opacity: 0.9;
-}
-
-.announcement-lightbox {
-    position: fixed;
-    inset: 0;
-    z-index: 2000;
-
-    display: none;
-    align-items: center;
-    justify-content: center;
-
-    padding: 30px;
-
-    background: rgba(0, 0, 0, 0.82);
-    backdrop-filter: blur(6px);
-}
-
-.announcement-lightbox.show {
-    display: flex;
-}
-
-.announcement-lightbox img {
-    max-width: 90vw;
-    max-height: 90vh;
-
-    width: auto;
-    height: auto;
-
-    object-fit: contain;
-
-    border-radius: 20px;
-
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-
-    animation: announcementZoom 0.3s ease;
-}
-
-.announcement-close {
-    position: absolute;
-    top: 25px;
-    right: 35px;
-
-    width: 50px;
-    height: 50px;
-
-    border: none;
-    border-radius: 50%;
-
-    background: white;
-    color: #17658e;
-
-    font-size: 30px;
-    line-height: 1;
-
-    cursor: pointer;
-
-    box-shadow: 0 5px 20px rgba(0,0,0,.25);
-
-    transition: .25s ease;
-}
-
-.announcement-close:hover {
-    transform: rotate(90deg) scale(1.08);
-}
-
-@keyframes announcementZoom {
-    from {
-        opacity: 0;
-        transform: scale(0.85);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@media (max-width: 600px) {
-    .announcement-lightbox {
-        padding: 15px;
-    }
-
-    .announcement-lightbox img {
-        max-width: 95vw;
-        max-height: 85vh;
-        border-radius: 14px;
-    }
-
-    .announcement-close {
-        top: 15px;
-        right: 15px;
-        width: 42px;
-        height: 42px;
-        font-size: 24px;
-    }
-}
-/* =========================
-   GALERY SLIDE HORIZONTAL
-========================= */
-
-.gallery-slider {
-    width: 100%;
-    height: 315px;
-    overflow: hidden;
-    border-radius: 38px;
-}
-
-.gallery-track {
-    display: flex;
-    width: 100%;
-    height: 100%;
-
-    transition: transform 0.8s ease-in-out;
-}
-
-.gallery-track img {
-    flex: 0 0 100%;
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    display: block;
-}
-
-
-/* Titik tetap seperti UI sebelumnya */
-
-.gallery-dots {
-    text-align: center;
-    margin-top: 7px;
-}
-
-.gallery-dots span {
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-
-    background: white;
-    border-radius: 50%;
-
-    margin: 0 4px;
-
-    transition: 0.3s ease;
-}
-
-.gallery-dots span.active {
-    transform: scale(1.2);
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 500px) {
-
-    .gallery-slider {
-        height: 260px;
-        border-radius: 27px;
-    }
-
-}
-/* Gallery dots */
-.gallery-dots {
-    text-align: center;
-    margin-top: 7px;
-}
-
-.gallery-dots span {
-    display: inline-block;
-
-    width: 7px;
-    height: 7px;
-
-    background: white;
-    border-radius: 50%;
-
-    margin: 0 4px;
-}
-
-.gallery-dots span.active {
-    transform: scale(1.15);
-}
-
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 900px) {
-
-    .section-2-container {
-        grid-template-columns: 1fr;
-        gap: 45px;
-        max-width: 550px;
-    }
-
-    .section-2 {
-        padding: 60px 6%;
-    }
-
-    .section-2-title {
-        font-size: 24px;
-    }
-
-    .section-2-card img {
-        height: 330px;
-    }
-
-    .announcement-card img {
-        height: auto;
-        max-height: 650px;
-    }
-
-    .article-card img {
-        height: 300px;
-    }
-}
-
-
-@media (max-width: 500px) {
-
-    .section-2 {
-        padding: 45px 5%;
-    }
-
-    .section-2-container {
-        gap: 35px;
-    }
-
-    .section-2-title {
-        font-size: 20px;
-        padding: 10px 15px;
-    }
-
-    .section-2-card {
-        border-radius: 32px;
-    }
-
-    .section-2-card img {
-        border-radius: 27px;
-        height: 260px;
-    }
-
-    .announcement-card img {
-        height: auto;
-    }
-
-    .article-card img {
-        height: 230px;
-    }
-
-    .article-content {
-        padding: 18px 10px 0;
-    }
-
-    .article-content h3 {
-        font-size: 18px;
-    }
-
-    .article-content p {
-        font-size: 14px;
-    }
-}
-
-    /* =========================
-       STATS / BAGIAN ATAS HALAMAN 3
-    ========================== */
-    .stats-section {
-      position: relative;
-      min-height: 420px;
-      padding: 70px 8% 120px;
-      background: white;
-    }
-
-    .stats {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 90px;
-    }
-
-    .stat-card {
-      min-height: 160px;
-      padding: 26px 15px;
-      border-radius: 38px;
-      background: var(--blue);
-      color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      box-shadow: 0 8px 16px rgba(0,0,0,.05);
-      animation: revealUp .7s both;
-    }
-
-    .stat-card:nth-child(2) { animation-delay: .12s; }
-    .stat-card:nth-child(3) { animation-delay: .24s; }
-
-    .stat-number {
-      font-size: 54px;
-      line-height: 1;
-      font-weight: 800;
-    }
-
-    .stat-label {
-      margin-top: 12px;
-      font-size: 16px;
-      letter-spacing: .08em;
-    }
-
-    /* =========================
-       ABOUT / BAGIAN BAWAH HALAMAN 3
-    ========================== */
-    .about {
-      position: relative;
-      min-height: 470px;
-      padding: 130px 5.5% 80px;
-      background: var(--blue);
-      color: white;
-    }
-
-    .about::before {
-      content: "";
-      position: absolute;
-      left: -4%;
-      top: -100px;
-      width: 108%;
-      height: 180px;
-      background: white;
-      border-radius: 50%;
-      box-shadow: 0 5px 22px rgba(0,0,0,.12);
-    }
-
-    .about-inner {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: 420px 1fr;
-      gap: 120px;
-      align-items: center;
-      max-width: 1220px;
-      margin: 0 auto;
-    }
-
-    .about-image {
-      width: 100%;
-      height: 310px;
-      border-radius: 42px;
-      overflow: hidden;
-      box-shadow: 0 12px 24px rgba(0,0,0,.12);
-    }
-
-    .about-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .about-text {
-      font-size: 20px;
-      line-height: 1.58;
-      text-align: justify;
-    }
-
-    .about-text strong {
-      font-weight: 800;
-    }
-
-    /* =========================
-       ANIMATIONS
-    ========================== */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateX(35px); }
-      to   { opacity: 1; transform: translateX(0); }
-    }
-
-    @keyframes revealUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(35px);
-      transition: opacity .8s ease, transform .8s ease;
-    }
-
-    .reveal.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* =========================
-       TABLET
-    ========================== */
-    @media (max-width: 1000px) {
-      .navbar { padding: 0 5%; }
-
-      .nav-links {
-        gap: 22px;
-        font-size: 15px;
-      }
-
-      .hero {
-        padding-left: 5%;
-        padding-right: 5%;
-      }
-
-      .hero h1 { font-size: clamp(48px, 7vw, 70px); }
-
-      .photo-showcase { gap: 10px; }
-
-      .main-photo {
-        width: 245px;
-        height: 360px;
-      }
-
-      .side-photos {
-        width: 145px;
-        height: 360px;
-      }
-
-      .side-photo {
-        width: 145px;
-        height: 170px;
-      }
-
-      .stats { gap: 30px; }
-
-      .about-inner {
-        grid-template-columns: 320px 1fr;
-        gap: 55px;
-      }
-
-      .about-text { font-size: 17px; }
-    }
-
-    /* =========================
-       MOBILE
-    ========================== */
-    @media (max-width: 720px) {
-      .navbar {
-        height: 68px;
-        border-radius: 0 0 26px 26px;
-      }
-
-      .brand {
-        font-size: 17px;
-      }
-
-      .nav-links {
-        position: absolute;
-        top: 68px;
-        left: 4%;
-        right: 4%;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        padding: 12px;
-        border-radius: 20px;
-        background: rgba(5, 76, 116, .98);
-        box-shadow: var(--shadow);
-        opacity: 0;
-        pointer-events: none;
-        transform: translateY(-10px);
-        transition: .25s ease;
-      }
-
-      .nav-links.open {
-        opacity: 1;
-        pointer-events: auto;
-        transform: translateY(0);
-      }
-
-      .nav-item {
-        padding: 13px 14px;
-        border-radius: 12px;
-      }
-
-      .nav-item:hover { background: rgba(255,255,255,.08); }
-
-      .dropdown {
-        position: static;
-        display: none;
-        margin-top: 8px;
-        box-shadow: none;
-      }
-
-      .nav-item:hover .dropdown { display: block; }
-
-      .menu-toggle { display: block; }
-
-      .hero {
-        min-height: auto;
-        padding: 115px 6% 150px;
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .hero::after {
-        bottom: -90px;
-        height: 180px;
-      }
-
-      .hero-content,
-      .photo-showcase {
-        width: 100%;
-      }
-
-      .hero h1 {
-        font-size: clamp(42px, 13vw, 62px);
-        letter-spacing: -1.5px;
-      }
-
-      .tagline {
-        font-size: 12px;
-        letter-spacing: .38em;
-      }
-
-      .hero-buttons {
-        margin-top: 38px;
-        gap: 14px;
-      }
-
-      .pill-button {
-        min-width: 125px;
-        padding: 15px 20px;
-        font-size: 16px;
-      }
-
-      .photo-showcase {
-        margin-top: 55px;
-        min-height: 360px;
-        gap: 8px;
-      }
-
-      .main-photo {
-        width: 64%;
-        height: 350px;
-        border-radius: 55px;
-      }
-
-      .side-photos {
-        width: 33%;
-        height: 350px;
-        gap: 10px;
-      }
-
-      .side-photo {
-        width: 100%;
-        height: 170px;
-        border-radius: 45px;
-      }
-
-      .stats-section {
-        min-height: auto;
-        padding: 35px 7% 110px;
-      }
-
-      .stats {
-        grid-template-columns: 1fr;
-        gap: 18px;
-        max-width: 300px;
-      }
-
-      .stat-card {
-        min-height: 130px;
-        border-radius: 30px;
-      }
-
-      .stat-number { font-size: 46px; }
-
-      .about {
-        padding: 115px 7% 60px;
-      }
-
-      .about::before {
-        top: -70px;
-        height: 130px;
-      }
-
-      .about-inner {
-        grid-template-columns: 1fr;
-        gap: 35px;
-      }
-
-      .about-image {
-        height: 250px;
-        border-radius: 32px;
-      }
-
-      .about-text {
-        font-size: 15px;
-        line-height: 1.7;
-        text-align: left;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-      }
-    }.site-footer {
-    text-align: center;
-    padding: 20px 0;
-    font-size: 14px;
-    color: #777;
-}/* =========================================================
-       SECTION VISI & MISI (DESAIN BARU SESUAI GAMBAR 4 & 5)
-    ========================================================= */
-    .visi-misi-section {
-      padding: 90px 5%;
-      background: #ffffff;
-      max-width: 1250px;
-      margin: 0 auto;
-    }
-
-    /* Header Visi dengan Garis Samping */
-    .visi-header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 25px;
-    }
-
-    .visi-header::before,
-    .visi-header::after {
-      content: "";
-      flex: 1;
-      height: 2px;
-      background-color: #000000;
-    }
-
-    .visi-header h2 {
-      color: #c0a030;
-      font-size: 24px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    /* Kartu Visi */
-    .visi-card-wrapper {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 60px;
-    }
-
-    .visi-card {
-      background: #ffffff;
-      border: 2px solid #000000;
-      border-radius: 40px;
-      padding: 35px 45px;
-      max-width: 650px;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
-    }
-
-    .visi-card p {
-      font-size: 24px;
-      line-height: 1.45;
-      color: #000000;
-      font-weight: 500;
-    }
-
-    /* Header Misi */
-    .misi-title-header {
-      color: #c0a030;
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 25px;
-    }
-
-    /* Grid Kartu Misi */
-    .misi-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-    }
-
-    .misi-card {
-      background: #ffffff;
-      border: 2px solid #000000;
-      border-radius: 35px;
-      padding: 30px 25px;
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.22);
-      display: flex;
-      align-items: flex-start;
-      gap: 15px;
-      min-height: 230px;
-    }
-
-    .misi-num {
-      font-size: 34px;
-      font-weight: 800;
-      line-height: 1;
-      color: #000000;
-      flex-shrink: 0;
-    }
-
-    .misi-card p {
-      font-size: 18px;
-      line-height: 1.45;
-      color: #000000;
-      margin: 0;
-      font-weight: 400;
-      text-align: left;
-    }
-
-    /* Responsif Visi Misi */
-    @media (max-width: 1024px) {
-      .misi-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 768px) {
-      .misi-grid { grid-template-columns: 1fr; }
-      .visi-card p { font-size: 19px; }
-      .misi-card p { font-size: 16px; }
-      .visi-card { padding: 25px 20px; }
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
     <a href="#home" class="brand">
       <img src="assets/LOGO SD RANDU01.png" alt="Logo SD Negeri Randu 01">
       <span>SDN RANDU 01</span>
     </a>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Buka menu" aria-expanded="false">
+      &#9776;
+    </button>
 
-    <nav class="nav-links" id="navLinks">
-      <a class="nav-item" href="#home">Home</a>
+    <nav class="nav" id="navLinks" aria-label="Menu utama">
+      <ul class="nav-list">
+        <li><a class="nav-link" data-spy="home" href="#home">Home</a></li>
 
-      <div class="nav-item has-dropdown">
-        Profil
-        <div class="dropdown">
-          <a href="#about">Tentang Sekolah</a>
-          <a href="#stats">Data Sekolah</a>
-          <a href="#visi">Visi & Misi</a>
-        </div>
-      </div>
+        <li class="has-dropdown">
+          <button class="nav-link dropdown-btn" data-spy="profil" aria-expanded="false">
+            Profil <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <ul class="dropdown">
+            <li><a href="#about">Tentang Sekolah</a></li>
+            <li><a href="#stats">Data Sekolah</a></li>
+            <li><a href="#visi">Visi &amp; Misi</a></li>
+          </ul>
+        </li>
 
-      <div class="nav-item has-dropdown">
-        Directory
-        <div class="dropdown">
-          <a href="#">Guru & Tendik</a>
-          <a href="#">Peserta Didik</a>
-        </div>
-      </div>
+        <li class="has-dropdown">
+          <button class="nav-link dropdown-btn" aria-expanded="false">
+            Directory <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <ul class="dropdown">
+            <li><a href="guru-tendik/guru-tendik.html">Guru &amp; Tendik</a></li>
+            <li><a href="peserta%20didik/peserta-didik.html">Peserta Didik</a></li>
+          </ul>
+        </li>
 
-      <div class="nav-item has-dropdown">
-        Galery
-        <div class="dropdown">
-          <a href="#gallery">Dokumentasi</a>
-          <a href="#gallery">Kegiatan Sekolah</a>
-        </div>
-      </div>
+        <li class="has-dropdown">
+          <button class="nav-link dropdown-btn" data-spy="galery" aria-expanded="false">
+            Galery <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <ul class="dropdown">
+            <li><a href="Galery/galery.html">Dokumentasi</a></li>
+            <li><a href="#kegiatan">Kegiatan Sekolah</a></li>
+          </ul>
+        </li>
 
-      <a class="nav-item" href="#contact">Contact Us</a>
+        <li><a class="nav-link" data-spy="contact" href="#contact">Contact Us</a></li>
+      </ul>
     </nav>
+
+    <div class="nav-actions">
+      <div class="search" id="searchBox">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" id="searchInput" placeholder="Cari informasi..." autocomplete="off"
+               aria-label="Cari informasi di website" aria-controls="searchResults">
+        <ul class="search-results" id="searchResults" role="listbox" hidden></ul>
+      </div>
+
+      <div class="notif" id="notifBox">
+        <button class="bell" id="bellBtn" aria-label="Notifikasi" aria-expanded="false">
+          <i class="fa-regular fa-bell"></i>
+          <span class="bell-dot" id="bellDot"></span>
+        </button>
+        <div class="notif-panel" id="notifPanel" hidden>
+          <p class="notif-title">Pemberitahuan</p>
+          <a href="#announcement" class="notif-item">
+            <i class="fa-solid fa-bullhorn"></i>
+            <span><strong>Pengumuman terbaru</strong>Lihat pengumuman dari sekolah</span>
+          </a>
+          <a href="#artikel" class="notif-item">
+            <i class="fa-solid fa-newspaper"></i>
+            <span><strong>Artikel: JAMRAN</strong>Kontingen SDN Randu 01 mengikuti JAMRAN</span>
+          </a>
+          <a href="Galery/galery.html" class="notif-item">
+            <i class="fa-solid fa-images"></i>
+            <span><strong>Dokumentasi kegiatan</strong>Foto kegiatan sekolah di halaman Galery</span>
+          </a>
+        </div>
+      </div>
+    </div>
   </header>
 
   <main>
 
-    <!-- HALAMAN / SECTION 1 -->
+    <!-- ===== HERO ===== -->
     <section class="hero" id="home">
 
       <div class="hero-content">
-        <h1>Selamat Datang di<br>SD Negeri<br>Randu 01</h1>
-        <p class="tagline">CERDAS, BERKARAKTER</p>
+        <span class="badge"><i class="fa-solid fa-star"></i> Sekolah terakreditasi A</span>
 
-        <div class="hero-buttons">
-          <a href="#visi" class="pill-button">VISI & MISI</a>
-          <a href="#about" class="pill-button">ABOUT</a>
-        </div>
-      </div>
+        <h1>Selamat Datang di SD Negeri Randu 01</h1>
+        <p class="tagline">Cerdas, Berkarakter</p>
+        <p class="hero-desc">
+          Sekolah standar nasional pendidikan di Desa Randu, Kecamatan Pecalungan,
+          Kabupaten Batang.
+        </p>
 
-      <!-- FOTO -->
-      <div class="photo-showcase" id="gallery">
-
-        <div class="main-photo">
-          <div class="photo-frame" id="mainFrame">
-            <div class="main-photo">
-              <img
-                class="photo"
-                src="assets/hero-1.jpg"
-                alt="Kegiatan siswa SD Negeri Randu 01"
-              >
-            </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="side-photos">
-          <div class="side-photo">
-            <img class="photo" src="assets/hero-2.jpg" alt="Kegiatan seni siswa">
-          </div>
-          <div class="side-photo">
-            <img class="photo" src="assets/hero-3.jpg" alt="Kegiatan pramuka siswa">
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- =========================
-     SECTION 2
-========================= -->
-
-<section id="section2" class="section-2">
-
-  <div class="section-2-container">
-
-      <!-- GALERY -->
-      <div class="section-2-item">
-
-          <div class="section-2-title">
-              GALERY
-          </div>
-
-          <div class="section-2-card gallery-card">
-
-            <div class="gallery-slider">
-        
-                <div class="gallery-track">
-        
-                    <img src="assets/galery1.jpg" alt="Galeri 1">
-        
-                    <img src="assets/galery2.jpg" alt="Galeri 2">
-        
-                    <img src="assets/galery3.jpg" alt="Galeri 3">
-        
-                    <img src="assets/galery4.jpg" alt="Galeri 4">
-
-                    <img src="assets/galery5.jpg" alt="Galeri 5">
-        
-                </div>
-        
-            </div>
-        
-            <div class="gallery-dots">
-                <span class="active"></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        
-        </div>
-
-          </div>
-
-      <!-- ANNOUNCEMENT -->
-      <div class="section-2-item">
-
-          <div class="section-2-title">
-              ANNOUNCEMENT
-          </div>
-
-          <div class="section-2-card announcement-card">
-
-            <a href="https://drive.google.com/file/d/1iXKmx1FAIa5k52b_UlotywygihcqIjDw/view?usp=drive_link" target="_blank">
-              <img src="assets/announcement.jpg" class="announcement-image">
+        <div class="meta">
+          <a class="chip chip-link"
+             href="https://www.google.com/maps/search/?api=1&query=SD+Negeri+Randu+01+Pecalungan+Batang"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Buka lokasi SD Negeri Randu 01 di Google Maps">
+            <i class="fa-solid fa-location-dot"></i> Jl. Subah Pecalungan KM 03
           </a>
+          <span class="chip"><i class="fa-regular fa-calendar-check"></i> Berdiri sejak 1828</span>
+        </div>
 
-          </div>
+        <div class="hero-actions">
+          <a href="#visi" class="btn btn-primary"><i class="fa-solid fa-bullseye"></i> Visi &amp; Misi</a>
+          <a href="#about" class="btn btn-ghost">Tentang Sekolah</a>
+        </div>
+      </div>
+      <div class="hero-photos" aria-label="Foto kegiatan sekolah">
+        <button class="photo-main" id="photoMain" type="button" aria-label="Perbesar foto utama">
+          <img id="photoMainImg" src="assets/hero-1.jpg" alt="Kegiatan siswa SD Negeri Randu 01">
+        </button>
+        <div class="photo-side">
+          <button class="photo-thumb" type="button" data-src="assets/hero-2.jpg" data-alt="Kegiatan seni siswa" aria-label="Tampilkan foto kegiatan seni">
+            <img src="assets/hero-2.jpg" alt="Kegiatan seni siswa">
+          </button>
+          <button class="photo-thumb" type="button" data-src="assets/hero-3.jpg" data-alt="Kegiatan pramuka siswa" aria-label="Tampilkan foto kegiatan pramuka">
+            <img src="assets/hero-3.jpg" alt="Kegiatan pramuka siswa">
+          </button>
+        </div>
+      </div>
+    </section>
 
+    <!-- ===== STATISTIK ===== -->
+    <section class="stats" id="stats" aria-label="Data sekolah">
+      <a class="stat-card reveal" href="peserta%20didik/peserta-didik.html">
+        <div class="stat-head">
+          <h3>Peserta didik</h3>
+          <span class="stat-icon blue"><i class="fa-solid fa-user-graduate"></i></span>
+        </div>
+        <p class="stat-value" data-target="154">0</p>
+        <p class="stat-note">Lihat data lengkap</p>
+      </a>
+
+      <a class="stat-card reveal" href="guru-tendik/guru-tendik.html">
+        <div class="stat-head">
+          <h3>Guru &amp; tendik</h3>
+          <span class="stat-icon orange"><i class="fa-solid fa-chalkboard-user"></i></span>
+        </div>
+        <p class="stat-value" data-target="10">0</p>
+        <p class="stat-note">Lihat struktur guru &amp; tendik</p>
+      </a>
+
+      <a class="stat-card reveal" href="#about">
+        <div class="stat-head">
+          <h3>Terakreditasi</h3>
+          <span class="stat-icon purple"><i class="fa-solid fa-award"></i></span>
+        </div>
+        <p class="stat-value">A</p>
+        <p class="stat-note">Akreditasi tahun 2024</p>
+      </a>
+
+      <a class="stat-card reveal" href="#about">
+        <div class="stat-head">
+          <h3>Berdiri sejak</h3>
+          <span class="stat-icon green"><i class="fa-solid fa-landmark"></i></span>
+        </div>
+        <p class="stat-value" data-target="1828" data-plain="true">0</p>
+        <p class="stat-note">Desa Randu, Pecalungan</p>
+      </a>
+    </section>
+
+    <!-- ===== KEGIATAN: GALERY, PENGUMUMAN, ARTIKEL ===== -->
+    <section class="section" id="kegiatan">
+      <div class="section-head reveal">
+        <h2>Kegiatan Sekolah</h2>
+        <p>Dokumentasi, pengumuman, dan kabar terbaru dari SD Negeri Randu 01.</p>
       </div>
 
+      <div class="panels">
 
-      <!-- ARTIKEL -->
-      <div class="section-2-item">
-
-          <div class="section-2-title">
-              ARTIKEL
+        <!-- Galery -->
+        <article class="panel reveal" id="galery">
+          <div class="panel-head">
+            <h3>Galery</h3>
+            <span class="stat-icon blue"><i class="fa-solid fa-images"></i></span>
           </div>
 
-          <div class="section-2-card article-card">
-
-              <img
-                  src="assets/artikel.jpg"
-                  alt="Artikel SD Negeri Randu 01"
-              >
-
-              <div class="article-content">
-
-                  <h3>
-                      Kontingen SDN Randu 01 Mengikuti JAMRAN
-                  </h3>
-
-                  <p>
-                      Kontingen SDN Randu 01, mengikuti JAMRAN
-                      yang diselenggarakan di Lapangan Desa
-                      Pecalungan pada tanggal 14 - 16
-                      Agustus 2026. . . . selengkapnya
-                  </p>
-
-              </div>
-
+          <div class="gallery" id="gallery">
+            <div class="gallery-track" id="galleryTrack">
+              <img src="assets/galery1.jpg" alt="Galeri kegiatan 1">
+              <img src="assets/galery2.jpg" alt="Galeri kegiatan 2">
+              <img src="assets/galery3.jpg" alt="Galeri kegiatan 3">
+              <img src="assets/galery4.jpg" alt="Galeri kegiatan 4">
+              <img src="assets/galery5.jpg" alt="Galeri kegiatan 5">
+            </div>
+            <button class="gallery-nav prev" id="galleryPrev" aria-label="Foto sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="gallery-nav next" id="galleryNext" aria-label="Foto berikutnya"><i class="fa-solid fa-chevron-right"></i></button>
           </div>
-
-      </div>
-
-  </div>
-
-</section>
-
-    <!-- HALAMAN / SECTION 3 -->
-    <section class="stats-section" id="stats">
-      <div class="stats">
-
-        <article class="stat-card reveal">
-          <div class="stat-number">154</div>
-          <div class="stat-label">PESERTA DIDIK</div>
+          <div class="gallery-dots" id="galleryDots"></div>
+          <a class="panel-link" href="Galery/galery.html">Buka semua dokumentasi</a>
         </article>
 
-        <article class="stat-card reveal">
-          <div class="stat-number">10</div>
-          <div class="stat-label">GURU & TENDIK</div>
+        <!-- Pengumuman -->
+        <article class="panel reveal" id="announcement">
+          <div class="panel-head">
+            <h3>Pengumuman</h3>
+            <span class="stat-icon orange"><i class="fa-solid fa-bullhorn"></i></span>
+          </div>
+          <a class="announcement" target="_blank" rel="noopener"
+             href="https://drive.google.com/file/d/1iXKmx1FAIa5k52b_UlotywygihcqIjDw/view?usp=drive_link">
+            <img src="assets/announcement.jpg" alt="Pengumuman SD Negeri Randu 01">
+          </a>
+          <a class="panel-link" target="_blank" rel="noopener"
+             href="https://drive.google.com/file/d/1iXKmx1FAIa5k52b_UlotywygihcqIjDw/view?usp=drive_link">Buka pengumuman lengkap</a>
         </article>
 
-        <article class="stat-card reveal">
-          <div class="stat-number">A</div>
-          <div class="stat-label">TERAKREDITASI</div>
+        <!-- Artikel -->
+        <article class="panel reveal" id="artikel">
+          <div class="panel-head">
+            <h3>Artikel</h3>
+            <span class="stat-icon green"><i class="fa-solid fa-newspaper"></i></span>
+          </div>
+          <img class="article-img" src="assets/artikel.jpg" alt="Artikel SD Negeri Randu 01">
+          <div class="article-body">
+            <h4>Kontingen SDN Randu 01 Mengikuti JAMRAN</h4>
+            <p>
+              Kontingen SDN Randu 01 mengikuti JAMRAN yang diselenggarakan di Lapangan Desa
+              Pecalungan pada tanggal 14 - 16 Agustus 2026.
+            </p>
+          </div>
         </article>
 
       </div>
     </section>
 
-    <section class="about" id="about">
-      <div class="about-inner">
+    <!-- ===== TENTANG SEKOLAH ===== -->
+    <section class="section" id="about">
+      <div class="section-head reveal">
+        <h2>Tentang Sekolah</h2>
+      </div>
 
-        <div class="about-image reveal">
+      <div class="about-card reveal">
+        <div class="about-image">
           <img src="assets/school.jpg" alt="SD Negeri Randu 01">
         </div>
 
-        <div class="about-text reveal">
-          SD Negeri Randu 01 merupakan sekolah standar nasional pendidikan yang terakreditasi A pada tahun 2024, berdiri sejak 1828. 
-          Sekolah Dasar Negeri Randu 01 terletak di Desa Randu Kecamatan Pecalungan Kabupaten Batang. 
-          Tepatnya dijalan Subah  Pecalungan KM 03. SD Negeri Randu 01 merupakan Sekolah gabungan dengan SD Negeri Randu 02 di tahun 2012.
-          Keadaan sarana dan prasarana yang dimiliki SD Negeri Randu 01 sudah cukup memadai. Menempati lahan seluas ± 4320 m2. 
-          Dari penggabungan 2  SD tersebut, menjadikan SD Negeri Randu 01 memiliki ruang kelas yang berlebih sehingga bisa dimanfaatkan sebagai 
-          ruang kegiatan lain seperti ruang laboratorium, komputer, ruang pertemuan dan ruang ketrampilan.
-        </div>
+        <div class="about-body">
+          <div class="facts">
+            <button class="fact" type="button" data-fact="Terakreditasi A pada tahun 2024">Akreditasi A</button>
+            <button class="fact" type="button" data-fact="Berdiri sejak tahun 1828">Sejak 1828</button>
+            <button class="fact" type="button" data-fact="Menempati lahan seluas sekitar 4320 m²">± 4320 m²</button>
+            <button class="fact" type="button" data-fact="Digabung dengan SD Negeri Randu 02 pada tahun 2012">Gabungan 2012</button>
+          </div>
+          <p class="fact-view" id="factView" aria-live="polite">Ketuk salah satu label di atas untuk melihat fakta singkat.</p>
 
+          <p class="about-text">
+            SD Negeri Randu 01 merupakan sekolah standar nasional pendidikan yang terakreditasi A pada tahun 2024, berdiri sejak 1828.
+            Sekolah Dasar Negeri Randu 01 terletak di Desa Randu Kecamatan Pecalungan Kabupaten Batang.
+            Tepatnya di jalan Subah Pecalungan KM 03. SD Negeri Randu 01 merupakan sekolah gabungan dengan SD Negeri Randu 02 di tahun 2012.
+            Keadaan sarana dan prasarana yang dimiliki SD Negeri Randu 01 sudah cukup memadai. Menempati lahan seluas ± 4320 m2.
+            Dari penggabungan 2 SD tersebut, menjadikan SD Negeri Randu 01 memiliki ruang kelas yang berlebih sehingga bisa dimanfaatkan sebagai
+            ruang kegiatan lain seperti ruang laboratorium, komputer, ruang pertemuan dan ruang ketrampilan.
+          </p>
+        </div>
       </div>
     </section>
 
-  <!-- SECTION VISI & MISI BARU -->
-  <section id="visi" class="visi-misi-section">
-      
-    <!-- VISI SEKOLAH -->
-    <div class="visi-header reveal">
-      <h2>VISI SEKOLAH</h2>
-    </div>
+    <!-- ===== VISI & MISI ===== -->
+    <section class="section" id="visi">
+      <div class="section-head reveal">
+        <h2>Visi &amp; Misi</h2>
+      </div>
 
-    <div class="visi-card-wrapper reveal">
-      <div class="visi-card">
+      <div class="visi-card reveal">
+        <h3>Visi sekolah</h3>
         <p>Terwujudnya peserta didik yang berakhlak mulia, cerdas, kreatif, mandiri sesuai profil pelajar pancasila.</p>
       </div>
-    </div>
 
-    <!-- MISI SEKOLAH -->
-    <div id="misi" class="misi-title-header reveal">
-      MISI SEKOLAH
-    </div>
-
-    <div class="misi-grid">
-      <!-- Card 01 -->
-      <div class="misi-card reveal">
-        <span class="misi-num">01</span>
-        <p>Menumbuhkembangkan nilai-nilai ajaran agama peserta didik dalam pembentukan karakter dan akhlak mulia</p>
-      </div>
-
-      <!-- Card 02 -->
-      <div class="misi-card reveal">
-        <span class="misi-num">02</span>
-        <p>Menggali potensi kecerdasan intelektual dan mengembangkan bakat minat peserta didik</p>
-      </div>
-
-      <!-- Card 03 -->
-      <div class="misi-card reveal">
-        <span class="misi-num">03</span>
-        <p>Mengembangkan keterampilan kemampuan dasar (literasi dan numerasi) peserta didik melalui kegiatan membaca, menulis, berhitung serta berkomunikasi sederhana dengan menggunakan kemampuan Bahasa Indonesia.</p>
-      </div>
-
-      <!-- Card 04 -->
-      <div class="misi-card reveal">
-        <span class="misi-num">04</span>
-        <p>Membangun kemandirian peserta didik melalui kegiatan pembelajaran yang berpihak pada peserta didik;</p>
-      </div>
-
-      <!-- Card 05 -->
-      <div class="misi-card reveal">
-        <span class="misi-num">05</span>
-        <p>Mewujudkan peserta didik sebagai pelajar sepanjang hayat dan memiliki potensi global sesuai dengan profil pelajar Pancasila</p>
-      </div>
-    </div>
-
-  </section>
+      <h3 class="misi-heading reveal" id="misi">Misi sekolah</h3>
+      <div class="misi-grid">
+        <div class="misi-card reveal">
+          <span class="misi-num">01</span>
+          <p>Menumbuhkembangkan nilai-nilai ajaran agama peserta didik dalam pembentukan karakter dan akhlak mulia</p>
+        </div>
+        <div class="misi-card reveal">
+          <span class="misi-num">02</span>
+          <p>Menggali potensi kecerdasan intelektual dan mengembangkan bakat minat peserta didik</p>
+        </div>
+        <div class="misi-card reveal">
+          <span class="misi-num">03</span>
+          <p>Mengembangkan keterampilan kemampuan dasar (literasi dan numerasi) peserta didik melalui kegiatan membaca, menulis, berhitung serta berkomunikasi sederhana dengan menggunakan kemampuan Bahasa Indonesia.</p>
+        </div>
+        <div class="misi-card reveal">
+          <span class="misi-num">04</span>
+          <p>Membangun kemandirian peserta didik melalui kegiatan pembelajaran yang berpihak pada peserta didik;</p>
+        </div>
+        <div class="misi-card reveal">
+          <span class="misi-num">05</span>
+          <p>Mewujudkan peserta didik sebagai pelajar sepanjang hayat dan memiliki potensi global sesuai dengan profil pelajar Pancasila</p>
+        </div>
       </div>
     </section>
 
-    <section id="contact" style="padding:90px 7%; text-align:center;">
-      <h2>Contact Us</h2>
-      <p style="margin-top:15px;">Email : sdnegeri.randu01@gmail.com</p>
+    <!-- ===== CONTACT ===== -->
+    <section class="section" id="contact">
+      <div class="contact-card reveal">
+        <h2>Contact Us</h2>
+        <p class="contact-email">
+          Email:
+          <a href="mailto:sdnegeri.randu01@gmail.com">sdnegeri.randu01@gmail.com</a>
+        </p>
+
+        <div class="social-links" aria-label="Media sosial SD Negeri Randu 01">
+          <a class="social-link" href="https://www.instagram.com/sdnegeri.randu_01/" target="_blank" rel="noopener noreferrer"
+             aria-label="Instagram SD Negeri Randu 01" title="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm8.7 1.5a1.35 1.35 0 1 1 0 2.7 1.35 1.35 0 0 1 0-2.7ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
+          </a>
+          <a class="social-link" href="https://www.tiktok.com/@sdnegeri.randu_01" target="_blank" rel="noopener noreferrer"
+             aria-label="TikTok SD Negeri Randu 01" title="TikTok">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.6 2h3.05c.2 1.95 1.35 3.5 3.35 4.2v3.1c-1.55-.05-3.05-.5-4.35-1.35v6.6c0 4.35-3.2 7.45-7.45 7.45A7.2 7.2 0 0 1 2.95 15a7.2 7.2 0 0 1 7.25-7.15c.35 0 .7.05 1.05.1v3.15a4.25 4.25 0 1 0 3.95 4.2V2h.4Z"/></svg>
+          </a>
+          <a class="social-link" href="https://www.youtube.com/@sdnegerirandu1126" target="_blank" rel="noopener noreferrer"
+             aria-label="YouTube SD Negeri Randu 01" title="YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.55 3.6 12 3.6 12 3.6s-7.55 0-9.4.5A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.85.5 9.4.5 9.4.5s7.55 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></svg>
+          </a>
+          <a class="social-link" href="mailto:sdnegeri.randu01@gmail.com"
+             aria-label="Kirim email ke SD Negeri Randu 01" title="Email">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 5.5A2.5 2.5 0 0 1 5 3h14a2.5 2.5 0 0 1 2.5 2.5v13A2.5 2.5 0 0 1 19 21H5a2.5 2.5 0 0 1-2.5-2.5v-13Zm2.7.1L12 11l6.8-5.4H5.2Zm14.3 1.8-6.6 5.2a1.45 1.45 0 0 1-1.8 0L4.5 7.4v11.1c0 .28.22.5.5.5h14c.28 0 .5-.22.5-.5V7.4Z"/></svg>
+          </a>
+        </div>
+      </div>
     </section>
+
     <footer class="site-footer">
       <p>Copyright © 2026 SDN Randu 01</p>
-  </footer>
+    </footer>
 
   </main>
 
-  <script>
-    // =========================
-    // MOBILE MENU
-    // =========================
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
+  <!-- Lightbox foto galery -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Tutup"><i class="fa-solid fa-xmark"></i></button>
+    <img id="lightboxImg" src="" alt="">
+  </div>
 
-    menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("open");
-    });
+  <button class="to-top" id="toTop" aria-label="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></button>
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
-      link.addEventListener("click", () => navLinks.classList.remove("open"));
-    });
-
-    // =========================
-    // PHOTO SLIDER
-    // New image slides in from the RIGHT
-    // =========================
-    const frame = document.getElementById("mainFrame");
-    const track = frame.querySelector(".photo-track");
-    let slideIndex = 0;
-
-    function slidePhoto() {
-      slideIndex = (slideIndex + 1) % 3;
-
-      // Make the incoming photo appear from the right.
-      track.style.transition = "none";
-      track.style.transform = "translateX(-33.333%)";
-
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          track.style.transition = "transform .75s cubic-bezier(.77,0,.18,1)";
-          track.style.transform =
-            `translateX(-${(slideIndex + 1) * 33.333333}%)`;
-        });
-      });
-
-      frame.classList.remove("slide-right");
-      void frame.offsetWidth;
-      frame.classList.add("slide-right");
-
-      // Keep the infinite carousel position stable.
-      if (slideIndex === 2) {
-        setTimeout(() => {
-          track.style.transition = "none";
-          track.style.transform = "translateX(-33.333%)";
-          slideIndex = 0;
-        }, 780);
-      }
-    }
-
-    // Every 4 seconds
-    //setInterval(slidePhoto, 4000);
-
-    // =========================
-    // SCROLL REVEAL
-    // =========================
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: .15 });
-
-    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
-  </script>
-<script>
-
-  let galleryIndex = 0;
-  
-  const galleryTrack = document.querySelector(".gallery-track");
-  const galleryDots = document.querySelectorAll(".gallery-dots span");
-  
-  const galleryTotal = galleryTrack.children.length;
-  
-  
-  function moveGallery() {
-  
-      galleryIndex++;
-  
-      if (galleryIndex >= galleryTotal) {
-          galleryIndex = 0;
-      }
-  
-      galleryTrack.style.transform =
-          `translateX(-${galleryIndex * 100}%)`;
-  
-  
-      galleryDots.forEach((dot, index) => {
-  
-          dot.classList.toggle(
-              "active",
-              index === galleryIndex
-          );
-  
-      });
-  
-  }
-  
-  
-  /* Berganti setiap 4 detik */
-  
-  setInterval(moveGallery, 4000);
-  
-  
-  /* Bisa klik titik */
-  
-  galleryDots.forEach((dot, index) => {
-  
-      dot.addEventListener("click", () => {
-  
-          galleryIndex = index;
-  
-          galleryTrack.style.transform =
-              `translateX(-${galleryIndex * 100}%)`;
-  
-  
-          galleryDots.forEach((dot, dotIndex) => {
-  
-              dot.classList.toggle(
-                  "active",
-                  dotIndex === galleryIndex
-              );
-  
-          });
-  
-      });
-  
-  });function openAnnouncement() {
-    const lightbox = document.getElementById("announcementLightbox");
-
-    lightbox.classList.add("show");
-
-    document.body.style.overflow = "hidden";
-}
-
-
-function closeAnnouncement() {
-    const lightbox = document.getElementById("announcementLightbox");
-
-    lightbox.classList.remove("show");
-
-    document.body.style.overflow = "";
-}
-  
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
