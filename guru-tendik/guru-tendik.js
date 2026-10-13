@@ -19,7 +19,7 @@ const guruLainnya = [
   { nama: "Khusnul Khotimah, S.Pd.SD",  jabatan: "Guru Kelas V",  foto: "" },
   { nama: "Frisca Ayu Febrianti, S.Pd, M.Pd",   jabatan: "Guru Kelas VI", foto: "" },
   { nama: "Carito Dwi Arfianto. S.Pd.I",       jabatan: "Guru PAI",      foto: "" },
-  { nama: "Surya Lintang Jatidharma. S.Pd",      jabatan: "Guru PJOK",     foto: "" },
+  { nama: "-",      jabatan: "Guru PJOK",     foto: "" },
   { nama: "Awal Sucipto",               jabatan: "Penjaga / TAS", foto: "" }
 ];
 
